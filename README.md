@@ -64,4 +64,7 @@
 
   ![tela de detalhes](https://user-images.githubusercontent.com/109437880/222212578-48c1bcb6-abd0-4829-8429-fd54a5c44a7e.PNG)
 
+## Layout
+
+  ![layout](https://user-images.githubusercontent.com/109437880/222212846-4cf3ac08-f558-4fd0-85e7-7bc700f12240.PNG)
 
