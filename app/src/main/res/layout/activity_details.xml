@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.DetailsActivity"
+    android:background="@color/black">
+    <TextView
+        android:id="@+id/textTitleDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TITLE EXEMPLE"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="70dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="69dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintTop_toBottomOf="@id/textTitleDetail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/imageDetail"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:background="@drawable/ic_launcher_background"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="wh galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining  ."
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardViewDetails"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
