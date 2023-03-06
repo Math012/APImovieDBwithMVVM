@@ -14,7 +14,7 @@ class MainViewModelFactory constructor(private val repository: MainRepository) :
         return if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
             MainViewModel(this.repository) as T
         } else {
-            throw IllegalArgumentException("ViewModel Not Found")
+            throw IllegalArgumentException("Not Found")
         }
     }
 }

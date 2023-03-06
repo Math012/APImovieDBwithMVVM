@@ -25,25 +25,50 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        var page = 1
         viewModel = ViewModelProvider(this, MainViewModelFactory(MainRepository(retrofitAPI)))[MainViewModel::class.java]
-        iniciarAdapter()
+        initAdapter()
+        initPage1()
+
+
+
+
+        binding.btNext.setOnClickListener {
+            page ++
+            println(page)
+            viewModel.getMovieWithPage(page).observe(this, Observer {
+                adapter.createListOfMovies(it)
+            })
+            binding.numberPages.setText("Paginas: "+page)
+
+        }
+
+        binding.btPrevious.setOnClickListener {
+            page --
+            if (page > 0){
+                println(page)
+                viewModel.getMovieWithPage(page).observe(this, Observer {
+                    adapter.createListOfMovies(it)
+                })
+                binding.numberPages.setText("Paginas: "+page)
+            }else{
+                Toast.makeText(this, "Você está na primeira pagina", Toast.LENGTH_LONG).show()
+            }
+        }
     }
 
-    override fun onStart() {
-        super.onStart()
+    private fun initPage1() {
         viewModel.movieList.observe(this, Observer {
-           adapter.createListOfMovies(it)
+            adapter.createListOfMovies(it)
         })
+        viewModel.getAllMoviesViewModel()
     }
 
-
-    private fun iniciarAdapter(){
+    private fun initAdapter(){
         adapter = MovieAdapter()
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = adapter
     }
-
-
 }
 
 
