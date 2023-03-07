@@ -11,10 +11,10 @@ import retrofit2.http.Query
 
 interface RetrofitAPI {
 
-    @GET("3/movie/popular?api_key=4441278772ad8e96a78a3b2aa6005322&language=en-US&page=1")
+    @GET("3/movie/popular?{YOURKEY}&language=en-US&page=1")
     fun getAllMoviesRetrofit() : Call<Movies>
 
-    @GET("3/movie/popular?api_key=4441278772ad8e96a78a3b2aa6005322&language=en-US&")
+    @GET("3/movie/popular?{YOURKEY}&language=en-US&")
     fun getMoviesPages(@Query("page")page: Int): Call<Movies>
 
     companion object {
